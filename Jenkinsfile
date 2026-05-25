@@ -5,7 +5,7 @@ pipeline {
 		IMAGE = "myapp:${BUILD_NUMBER}"
 	}
     stages {
-		stage ('Checkout')
+		stage ('Checkout') {
 			steps {
 				checkout scm
 		}
@@ -40,4 +40,4 @@ pipeline {
 		sh 'docker system prune -f'
 			}
 		}		
-	
+}
