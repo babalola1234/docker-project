@@ -12,7 +12,7 @@ pipeline {
     }
     stage ('Build image') {
       steps{
-		  sh 'docker build -t $IMAGE -f Dockerfile'
+		  sh 'docker build -t $IMAGE'
         }
       }
     stage ('Unite Test') {
