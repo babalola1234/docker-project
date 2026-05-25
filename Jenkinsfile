@@ -10,17 +10,17 @@ pipeline {
 				checkout scm
 		}
     }
-    stage('Building image') {
+    stage ('Build image') {
       steps{
 		  sh 'docker build -t $IMAGE .'
         }
       }
-    stage('Unite Test') {
+    stage ('Unite Test') {
       steps	{
 		  sh 'docker run --rm $IMAGE echo "Running tests ....."'
         }
     }
-    stage('Deploy Image') {
+    stage ('Deploy Image') {
       steps{
         sh ''' 
           docker rm -f myapp || true 
